@@ -2,7 +2,10 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"math"
+	"os"
+	"regexp"
 	"sort"
 	"strconv"
 	"strings"
@@ -114,21 +117,48 @@ func seventhExercise() string {
 	return output
 }
 
-// func eighthExercise(sentence string) {
-// 	// var letters int
-// 	// var digits int
-// 	re := regexp.MustCompile("[^a-zA-Z0-9]+")
-// 	converted := re.ReplaceAllString(sentence, "")
-// 	// for _, i := range converted {
-// 	// 	_, err := strconv.Atoi(i)
-// 	// 	if err != nil {
-// 	// 		digits += 1
-// 	// 	} else {
-// 	// 		letters += 1
-// 	// 	}
-// 	// }
-// 	// fmt.Printf("%t\n", converted)
-// }
+func eighthExercise(sentence string) {
+	var letters int
+	var digits int
+	re := regexp.MustCompile("[^a-zA-Z0-9]+")
+	converted := strings.Split(re.ReplaceAllString(sentence, ""), "")
+	for _, i := range converted {
+		if _, err := strconv.Atoi(i); err == nil {
+			digits += 1
+		} else {
+			letters += 1
+		}
+	}
+	fmt.Println("LETTERS: ", letters)
+	fmt.Println("DIGITS: ", digits)
+}
+
+func twelthExercise() {
+	m := map[int]bool{1: true, 2: false, 3: false}
+	delete(m, 2)
+	for k, v := range m {
+		fmt.Println(k, v)
+	}
+}
+
+func thirteenExercise() {
+	f, err := os.Create("info.txt")
+	if err != nil {
+		log.Fatal("err1: ", err)
+	}
+	defer f.Close()
+	_, err2 := f.WriteString("The Go gopher is an iconic mascot!")
+	if err2 != nil {
+		log.Fatal("err2: ", err2)
+	}
+}
+
+func SwapValues() {
+	x, y := 5.5, 8.8
+	ptrx, ptry := &x, &y
+	x, y = *ptry, *ptrx
+	fmt.Println(x, y)
+}
 
 func main() {
 	first := firstExercise("100, 150, 180")
@@ -138,6 +168,7 @@ func main() {
 	fifth := fifthExercise("hello world and practice makes perfect and hello world again")
 	sixth := sixthExercise("101,0100,0011,10100,1010,1001,1111")
 	seventh := seventhExercise()
+	eighthExercise("hello world! 123")
 	fmt.Println("first: ", first)
 	fmt.Println("Second: ", second)
 	fmt.Println("Third: ", third)
@@ -145,5 +176,7 @@ func main() {
 	fmt.Println("fifth: ", fifth)
 	fmt.Println("sixth: ", sixth)
 	fmt.Println("seventh: ", seventh)
-	// eighthExercise("hello world! 123")
+	twelthExercise()
+	thirteenExercise()
+	SwapValues()
 }
