@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Application form
+{% endblock %}
+
+{% block content %}
+    <form action="" method="POST" class="application-form" autocomplete="off">
+        <!-- automatic securing of form -->
+            {% csrf_token %}
+            
+            <div class="container">
+                <div class="head-cont">
+                    <h3>Job Application</h3>
+                    <hr>
+                </div>
+                {% if form.errors %}
+                <span class="form-head-error-span">You should enter all the fields specified with <span class="asterisk">*</span></span>
+                {% endif %}
+                <div class="field-indicator">
+                    <small><span class="asterisk">*</span> <span>indicates fields required</span></small> 
+                </div>
+            <!-- for viewing form created in the forms.py as div -->
+            {{form.as_div}}
+            <div class="btn-cont">
+                <input type="submit" value="Submit" id="form-submit" class="btn btn-apply" onsubmit="validate()">
+            </div>   
+        </div>
+    </form>
+{% endblock %}

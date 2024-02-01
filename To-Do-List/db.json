@@ -1,0 +1,29 @@
+{
+  "tasks": [
+    {
+      "text": "Paint Mountain",
+      "day": "",
+      "reminder": false,
+      "categories": "Creative",
+      "completd": false,
+      "id": 8,
+      "completed": false
+    },
+    {
+      "text": "Learn Python",
+      "day": "",
+      "reminder": true,
+      "categories": "Study",
+      "completed": false,
+      "id": 9
+    },
+    {
+      "text": "Learn C++",
+      "day": "",
+      "reminder": false,
+      "categories": "Study",
+      "completed": false,
+      "id": 10
+    }
+  ]
+}

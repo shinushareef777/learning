@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+.home-margin-cont{
+    margin-top: 70px;
+   /*  margin-left: 50px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    color: rgb(38, 1, 38);
+}
+
+
+
+
+.home-head-cont{
+    margin: 20px;
+}
+
+.home-head-cont h1{
+    font-family: 'roboto-slab', 'sans-serif';
+    font-weight: 600;
+    color: #333;
+}
+
+.main-cont-home{
+   /*  border: 10px solid rgb(195, 92, 92); */
+    width: 70%;
+   /*  align-items: center; */
+   /*  padding: 1.3em; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    box-shadow:  0 1px 6px 0 rgb(32 33 36 / 40%);
+   
+}
+
+.job-list-cont{
+/* border: 10px solid black; */
+padding: 1em;
+margin: 8px;
+margin-left: 2em;
+width: 85%;
+box-shadow:  0 1px 6px 0 rgb(32 33 36 / 65%);
+/* width: 70%; */
+
+}
+
+.job-list-cont a{
+    text-decoration: none;
+    color: rgb(4, 31, 57);
+}
+
+.home-btn-apply:hover{
+    background-color: rgb(4, 69, 78);
+    color: #fff;
+    cursor: arrow;
+}
+
+.home-btn-apply{
+    float: right;
+    padding: 8px;
+    background-color: rgba(16, 69, 119, 1);
+    cursor: pointer;
+    color: #fff;
+    width: 18%;
+    border: 1px solid rgb(10, 58, 83);
+    /* border-radius: 10px; */
+    /* border: none; */
+    /* height: 20px; */
+}
+

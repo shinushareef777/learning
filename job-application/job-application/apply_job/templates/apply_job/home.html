@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+    <div class="home-margin-cont">
+      <div class="home-head-cont">
+        <h1>Available Jobs</h1>
+      </div>
+    <div class="main-cont-home">
+      <!-- looping through Available jobs -->
+        {% for job in jobs %}
+        <div class="job-list-cont">
+          <div class="job-listing" id="{{job.id}}">
+          <a href="">{{job.title}}</a>
+            <a href="{% url 'apply' %}"><button class="home-btn-apply">Apply</button></a>
+          </div>
+        </div>
+        {% endfor %} 
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+/* success message style */
+.success-msg{
+    background-color: rgba(113, 222, 113, 0.3);
+    font-size: medium;
+    width: 100%;
+    margin-top: 0;
+    padding: 10px;
+    color: rgb(2, 80, 2);
+    display: "none";
+    
+}
+.btn-msg{
+    border: none;
+    background-color: rgba(113, 222, 113, 0.3);
+    font-size: 20px;
+    color: rgb(0, 4, 0);
+    padding: 10px;
+    float: right;
+    width: 40px;
+    height: 40px;
+}
+
+.backend-val-error{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    margin-left: -50px;
+}
+
+.backend-val-error ul{
+    list-style-type: none;
+}
+
+.backend-val-error li{
+    font-size: 0.8em;
+    color: rgb(180, 61, 61);
+}
+
+.errorlist{
+    color: rgb(163, 31, 31);
+    list-style-type: none;
+    font-size: 0.9em;
+}
+

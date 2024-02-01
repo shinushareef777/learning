@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Delete
+{% endblock %}
+
+{% block content %}
+    <div class="margin-div-dlt">
+        <div class="sub-div-dlt">
+            <div class="delet-div">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <p>Are you sure you want to delete the job application for {{obj.position_applying}}?</p>
+                    <div class="dlt-conf-btn-div">
+                        <input type="Submit" class="btn-confirm btn-deleter" value="Confirm">
+                        <a href="{{request.META.HTTP_REFERER}}"><input type="button" value="Cancel" class="btn-confirm btn-cancel"></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>  
+{% endblock %}

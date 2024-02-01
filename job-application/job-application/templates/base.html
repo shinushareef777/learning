@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/form_style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/listing_style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/home_style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/message_style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/delete_style.css' %}">
+    <script src="{% static 'js/form_validation.js' %}"></script>
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <header class="header-company">
+        <div class="company-name-h1"> 
+          <a href="{% url 'home' %}" class="logo-link"><h2>Logo</h2></a> 
+        </div>
+       <div class="nav-links-div">
+        <a href="{% url 'home' %}" class="nav-links home-link">Home</a>
+        <a href="{% url 'myjobs' %}" class="nav-links jobs-link">My Jobs</a>
+       </div>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

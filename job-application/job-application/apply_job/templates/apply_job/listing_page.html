@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Listing Page
+{% endblock %}
+
+{% block content %}
+<div class="flex-container">
+  <div class="margin-cont">
+    <h2>Applied Jobs</h2>
+        {% for msg in messages %}
+        <div class="success-msg">
+            {{msg}} 
+            <input type="submit" class="btn-msg" value="x" onclick="return removeMsg()">
+        </div>
+        {% endfor %}
+
+    {% for data in form %}
+    <div class="main-cont">
+                <div class="name-field list-text">
+                    {{data.first_name}} {{data.last_name}}
+                </div>
+                <div class="email-field list-text">
+                    {{data.email}}
+                </div>
+                <div class="position-field list-text">
+                    {{data.position_applying}}
+                </div>
+                <div class="for-small">
+                    <small>Date Applied: {{data.date_applied}}</small>
+                </div>
+                <div class="link-buttons">
+                    <a href="{% url 'edit' data.id%}"><button class="btnlst btn-edit">Edit</button></a>
+                    <a href="{% url 'delete' data.id%}"><button class="btnlst btn-delete">Delete</button></a>
+                </div>
+        </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}
